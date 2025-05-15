@@ -35,9 +35,9 @@ Data Visualization: Power BI connected directly to PostgreSQL to create interact
 
 - Scraped or retrieved customer review data via APIs from:
 
-    - Amazon
+    - Amazon [Amazon Scraping](https://github.com/adetonayusuf/mayfairecommers/blob/main/amazon.py)
 
-    - AliExpress and similar platforms using **web scraping tools** (like `BeautifulSoup`, `Selenium`) or public **REST APIs**
+    - AliExpress and similar platforms using **web scraping tools** (like `BeautifulSoup`, `Selenium`) or public **REST APIs** [Aliexpress Scraping](https://github.com/adetonayusuf/mayfairecommers/blob/main/Ali.py)
 
 - Format: .csv or .json
 
@@ -57,7 +57,7 @@ All individual `.csv` submissions were committed to the shared GitHub repository
 After data collection:
 - Downloaded all individual contributions locally.
 
-- Consolidated files into a raw_data/ directory.
+- Consolidated files into a raw_data/ directory. [Raw Data](https://github.com/adetonayusuf/mayfairecommers/blob/main/raw_data.zip)
 
 --
 
@@ -65,7 +65,7 @@ After data collection:
 
 - Created Azure Storage Account: mayfairproject
 
-- Used SAS token authentication to upload the raw_data folder to a blob container (customer-reviews) using Python in VS Code.
+- Used SAS token authentication to upload the raw_data folder to a blob container (customer-reviews) using Python in VS Code. [Azure Folder Upload](https://github.com/adetonayusuf/mayfairecommers/blob/main/azurefolderupload.py)
 
 --
 
@@ -73,9 +73,9 @@ After data collection:
 
 - Mounted Data Lake into Databricks using dbutils.fs.mount()
 
-- Loaded CSVs into a Spark DataFrame:
+- Loaded CSVs into a Spark DataFrame:  [Databricks notebook](https://github.com/adetonayusuf/mayfairecommers/blob/main/Mayfare_customerreview.ipynb)
 
-- Cleaned & transformed data:
+- Cleaned & transformed data: [Databricks notebook](https://github.com/adetonayusuf/mayfairecommers/blob/main/Mayfare_customerreview.ipynb)
 
       - Renamed columns
 
@@ -91,4 +91,12 @@ After data collection:
   
 - Set up a local PostgreSQL DB or tunnel via ngrok
 
-- Wrote the transformed data to PostgreSQL using JDBC:
+- Wrote the transformed data to PostgreSQL using JDBC: [Databricks notebook](https://github.com/adetonayusuf/mayfairecommers/blob/main/Mayfare_customerreview.ipynb)
+
+Base on the above Databricks Notebook, two tables was transferred to Postgres
+
+![Postgres Tables](https://github.com/adetonayusuf/mayfairecommers/blob/main/Postgres%20Tables.png)
+
+Customer_review to be shared with Data Scientist to carry out Sentiment analysit
+
+Customer_review_enriches to exported to Power BI from Postgres for sentiment analysis.
