@@ -26,7 +26,9 @@ Data Visualization: Power BI connected directly to PostgreSQL to create interact
 
 ## Data Architecture
 
+
 !{Data Architecture}(https://github.com/adetonayusuf/mayfairecommers/blob/main/Mayfare%20Data%20Architecture.drawio.png)
+
 
 
 ---
